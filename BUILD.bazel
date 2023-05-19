@@ -2,6 +2,7 @@ load("@rules_cc//cc:defs.bzl", "cc_library")
 
 cc_library(
     name = "efsw",
+    visibility = ["//visibility:public"],
     strip_include_prefix = "include",
     hdrs = glob(["include/**/*.hpp", "include/**/*.h"]),
     copts = select({
