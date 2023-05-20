@@ -9,3 +9,4 @@ CMakeFiles/
 /Makefile
 *.DS_Store
 .qtc_clangd
+/bazel-*

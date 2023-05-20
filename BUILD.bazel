@@ -4,6 +4,7 @@ cc_library(
     name = "efsw",
     visibility = ["//visibility:public"],
     strip_include_prefix = "include",
+    includes = ["include", "src"],
     hdrs = glob(["include/**/*.hpp", "include/**/*.h"]),
     copts = select({
         "@bazel_tools//tools/cpp:msvc": ["/std:c++20"],
@@ -30,6 +31,10 @@ cc_library(
         "@platforms//os:windows": [
             "src/efsw/FileWatcherWin32.cpp",
             "src/efsw/WatcherWin32.cpp",
+            "src/efsw/platform/win/FileSystemImpl.cpp",
+            "src/efsw/platform/win/MutexImpl.cpp",
+            "src/efsw/platform/win/SystemImpl.cpp",
+            "src/efsw/platform/win/ThreadImpl.cpp",
         ],
     }),
 )
